@@ -1,0 +1,183 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "person": {
+                "gender": "female",
+                "fullName": [
+                    "Adelina",
+                    "Dibaeva"
+                ],
+                "health": 100
+            },
+            "work": {
+                "position": "Software Developer",
+                "salary": 1000000000000
+            },
+            "favLanguages": [
+                "JS",
+                "HTML",
+                "CSS",
+                "Python"
+            ]
+        }
+    ],
+    "required": [
+        "person",
+        "work",
+        "favLanguages"
+    ],
+    "properties": {
+        "person": {
+            "$id": "#/properties/person",
+            "type": "object",
+            "title": "The person schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "gender": "female",
+                    "fullName": [
+                        "Adelina",
+                        "Dibaeva"
+                    ],
+                    "health": 100
+                }
+            ],
+            "required": [
+                "gender",
+                "fullName",
+                "health"
+            ],
+            "properties": {
+                "gender": {
+                    "$id": "#/properties/person/properties/gender",
+                    "type": "string",
+                    "title": "The gender schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "female"
+                    ]
+                },
+                "fullName": {
+                    "$id": "#/properties/person/properties/fullName",
+                    "type": "array",
+                    "title": "The fullName schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            "Adelina",
+                            "Dibaeva"
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/person/properties/fullName/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/person/properties/fullName/items/anyOf/0",
+                                "type": "string",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Adelina",
+                                    "Dibaeva"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "health": {
+                    "$id": "#/properties/person/properties/health",
+                    "type": "integer",
+                    "title": "The health schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "work": {
+            "$id": "#/properties/work",
+            "type": "object",
+            "title": "The work schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "position": "Software Developer",
+                    "salary": 1000000000000
+                }
+            ],
+            "required": [
+                "position",
+                "salary"
+            ],
+            "properties": {
+                "position": {
+                    "$id": "#/properties/work/properties/position",
+                    "type": "string",
+                    "title": "The position schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Software Developer"
+                    ]
+                },
+                "salary": {
+                    "$id": "#/properties/work/properties/salary",
+                    "type": "integer",
+                    "title": "The salary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        1000000000000
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "favLanguages": {
+            "$id": "#/properties/favLanguages",
+            "type": "array",
+            "title": "The favLanguages schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "JS",
+                    "HTML"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/favLanguages/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/favLanguages/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "JS",
+                            "HTML"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

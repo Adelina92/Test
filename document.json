@@ -1,0 +1,12 @@
+{
+    "person": {
+        "gender": "female",
+        "fullName": ["Adelina", "Dibaeva"],
+        "health": 100
+    }, 
+    "work": {
+        "position": "Software Developer",
+        "salary": 1000000000000
+    },
+    "favLanguages": ["JS", "HTML", "CSS", "Python"]
+}
